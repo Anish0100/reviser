@@ -340,7 +340,7 @@
     { "word": "guage", 
     "meaning": "to measure" },
     { "word": "melange", 
-    "meaning": "a mixture" },
+    "meaning": "a mixture: particularly a disorderly or confused mixture" },
     { "word": "hypnotic", 
     "meaning": "fascinating or mesmerizing" },
     { "word": "obnoxious", 
@@ -378,5 +378,20 @@
     { "word": "saga", 
     "meaning": "a series of events" },
     { "word": "preposterous", 
-    "meaning": "ridiculous or absurd" }
+    "meaning": "ridiculous or absurd" },
+    { "word": "ecstatic", 
+    "meaning": "overjoyed or delighted or excited" },
+    { "word": "controversial", 
+    "meaning": "debatable" },
+    { "word": "serene", 
+    "meaning": "calm, peaceful or tranquil" },
+    { "word": "obdurate", 
+    "meaning": "stubborn or unyielding" },
+    { "word": "flux", 
+    "meaning": "instability or fluctuation" },
+    { "word": "exuberant", 
+    "meaning": "lively, energetic or enthusiastic" },
+    { "word": "fiendish", 
+    "meaning": "This word can mean cruel or brilliant or difficult or impossible" }
+
 ]
