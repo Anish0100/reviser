@@ -113,7 +113,7 @@ function speakCurrentWord() {
 }
 
 // Event listener for the search input
-searchInput.addEventListener('keydown', (event) => {
+searchInput.addEventListener('keyup', (event) => {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent the default behavior of the Enter key
         const searchTerm = searchInput.value.trim().toLowerCase();
