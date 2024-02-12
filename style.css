@@ -91,9 +91,9 @@ p {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-#search-input{
+.search-input{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1em;
     font-stretch: narrower;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-style: italic;

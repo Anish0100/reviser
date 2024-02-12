@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playBtn = document.getElementById('autoplay');
     const pauseBtn = document.getElementById('pause');
     const restartBtn = document.getElementById('restart');
-    const searchInput = document.getElementById('search-input');
+    const searchInput = document.querySelector('.search-input');
 
     let wordsAndMeanings;
     let currentWordIndex = 0;
