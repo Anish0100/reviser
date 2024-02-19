@@ -78,8 +78,14 @@ p {
     margin-top: 120px;
     gap: 5px;
 }
-#play-btn1, #restart-btn1, #pause-btn{
+/* #play-btn1, #restart-btn1, #pause-btn, #study, #practise{
     background-color: #007bff;
+} */
+button, a{
+    text-decoration: none;
+    color: #fff;
+    background-color:fff;
+
 }
 .searchbox{
     display: flex;
@@ -165,4 +171,15 @@ p {
 .btns:hover i::after{
     width: 20px;
     left: 80%;
+}
+.ig-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-logo img {
+    margin-bottom: 15px ;
+    width: 15px; /* Adjust size as needed */
+    margin-right: 5px; /* Add spacing between the logo and text */
 }

@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
-    const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
     const pauseBtn = document.getElementById('pause');
     const restartBtn = document.getElementById('restart');
@@ -73,24 +72,26 @@ document.addEventListener('DOMContentLoaded', () => {
         speakCurrentWord();
     }
 
-    // Function to speak the current word
+// Function to speak the current word
 function speakCurrentWord() {
     const wordData = wordsAndMeanings[currentWordIndex];
     if (!wordData) {
         // If wordData is undefined, return
         return;
     }
-    const { word, meaning } = wordData;
-    const speech = new SpeechSynthesisUtterance(`${word}. ${meaning}`);
+    const { word } = wordData;
+    const speech = new SpeechSynthesisUtterance(`${word}`);
     speechSynthesisInstance = speech;
 
     // Event listener to detect when speech synthesis ends
     speech.onend = () => {
-        // If autoplay is active, continue to the next word
+        // If autoplay is active, continue to the next word after 5 seconds
         if (autoplayActive && currentWordIndex < wordsAndMeanings.length - 1) {
-            currentWordIndex++;
-            displayWordAndMeaning(currentWordIndex);
-            speakCurrentWord(); // Speak the next word
+            setTimeout(() => {
+                currentWordIndex++;
+                displayWordAndMeaning(currentWordIndex);
+                speakCurrentWord(); // Speak the next word
+            }, 1000); // 5000 milliseconds = 5 seconds
         } else if (!autoplayActive) {
             // If autoplay is not active, reset the speech synthesis instance
             speechSynthesisInstance = null;
@@ -101,14 +102,13 @@ function speakCurrentWord() {
 }
 
 
-
    // Function to display the word and meaning
    function displayWordAndMeaning(index) {
     const wordData = wordsAndMeanings[index];
     if (wordData) {
         const { word, meaning } = wordData;
         wordDisplay.innerText = word;
-        meaningDisplay.innerText = meaning;
+        // meaningDisplay.innerText = meaning;
     }
 }
 
