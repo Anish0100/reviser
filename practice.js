@@ -91,7 +91,7 @@ function speakCurrentWord() {
                 currentWordIndex++;
                 displayWordAndMeaning(currentWordIndex);
                 speakCurrentWord(); // Speak the next word
-            }, 800); 
+            }, 600); 
         } else if (!autoplayActive) {
             // If autoplay is not active, reset the speech synthesis instance
             speechSynthesisInstance = null;
