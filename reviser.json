@@ -830,8 +830,17 @@
     { "word": "unanimous", 
     "meaning": "united, undivided or agreed" },
     { "word": "animosity", 
-    "meaning": "acrimony" }
-
+    "meaning": "acrimony" },
+    { "word": "ignoble", 
+    "meaning": "not noble: dishonorable, immoral, base or reprehensible" },
+    { "word": "ignominy", 
+    "meaning": "humiliation, embarrassment, dishonor, shame or disgrace" },
+    { "word": "ignominious", 
+    "meaning": "shameful, dishonorable, humiliating or disgraceful" },
+    { "word": "ignoramus", 
+    "meaning": "an unintelligent person" },
+    { "word": "sham", 
+    "meaning": "something fake/ an imposter" }
 ]
 
 
