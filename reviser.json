@@ -1,4 +1,26 @@
 [
+    { "word": "acrimony", 
+    "meaning": "bitterness, hostility or bad feeling" },
+    { "word": "acrimonious", 
+    "meaning": "bitter, unfriendly, hostile, or harsh" },
+    { "word": "accord", 
+    "meaning": "aggrement" },
+    { "word": "concord", 
+    "meaning": "agreement" },
+    { "word": "discord", 
+    "meaning": "disagreement" },
+    { "word": "concede", 
+    "meaning": "allow, accept, yield or forfeit" },
+    { "word": "accede", 
+    "meaning": "agree" },
+    { "word": "dense", 
+    "meaning": "crowded, populated, complicated" },
+    { "word": "disdain", 
+    "meaning": "extreme contempt, disrespect or scorn for somebody or something" },
+    { "word": "to disdain", 
+    "meaning": "to look down on sb or sth: disparage, deride, spurn or scorn" },
+    { "word": "eradicate", 
+    "meaning": "get rid of: eliminate or exterminate" },
     { "word": "abound", 
     "meaning": "thrive, flourish or overflow" },
     { "word": "abortive", 
@@ -804,7 +826,11 @@
     { "word": "auspicious", 
     "meaning": "favorable or luck" },
     { "word": "inauspicious", 
-    "meaning": "unfavorable or unlucky" }
+    "meaning": "unfavorable or unlucky" },
+    { "word": "unanimous", 
+    "meaning": "united, undivided or agreed" },
+    { "word": "animosity", 
+    "meaning": "acrimony" }
 
 ]
 
