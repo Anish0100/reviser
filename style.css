@@ -36,40 +36,45 @@ p {
 
 #box {
     display: flex;
+    flex-direction: column; /* Stack children vertically */
     justify-content: center;
     align-items: center;
-    /* border: 1px rgb(193, 6, 6) solid; */
     white-space: nowrap;
-    width:200px;
-    height: 70px;
+    width: 200PX;
+    height: 70PX;
     padding: 2%;
     transition: transform 0.5s ease-in-out;
     margin: auto;
 }
 
 #word-display {
-    display: inline;
-    position: fixed;
-    font-size: 30px;
-    margin-bottom: 30px;
-    margin-left: 10px;
+    display: flex;
+    font-size: 50px;
     text-align: center; 
+    align-self: center;
     text-transform: uppercase;
-    text-decoration: solid;
     font-weight: 500;
     text-shadow: #060607;
 }
 
 #meaning-display {
-    display: inline;
-    position: fixed;
-    font-size: 20px; 
-    margin-top: 50px;
-    margin-left: 10px;
+    display: flex;
+    font-size: 1.5rem;
     text-align: center;
     font-style: italic;
+    margin-top: 10px;
+    white-space: nowrap;
 }
 
+@media screen and (max-width: 500px) {
+    #word-display {
+        font-size: 30px;
+    }
+    #meaning-display {
+        font-size: 20px;
+        white-space: wrap;
+    }
+}
 .button-container1{
     display: flex;
     position: relative;
@@ -109,6 +114,12 @@ button, a{
     width: 400px;
 }
 
+@media screen and (max-width: 400px) {
+    .search-input {
+        width: 300px; /* Reduce font size for smaller screens */
+    }
+}
+
 .btns{
     position: relative;
     background: #fff;
@@ -116,10 +127,16 @@ button, a{
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1em;
+    width: 100px;
     font-weight: 400;
     padding: 10px 10px;
     transition: 0.5s;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+@media screen and (max-width: 400px) {
+    .btns {
+        width: 90px; /* Reduce font size for smaller screens */
+    }
 }
 .btns:hover{
     letter-spacing: 0.25em;
@@ -195,6 +212,7 @@ button, a{
     width: 50px;
     height: 50px;
     transition: color 0.3s; 
+    outline: none;
 }
 
 #prev_btn{
@@ -223,3 +241,11 @@ button, a{
         transform: translateY(-0px); /* Move the button down slightly */
     }
 }
+
+@media screen and (max-width: 500px) {
+    #next_btn:focus, #prev_btn:focus{
+        outline: none !important;
+        background-color: transparent;
+    }
+}
+
