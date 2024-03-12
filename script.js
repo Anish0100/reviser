@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pauseBtn = document.getElementById('pause');
     const restartBtn = document.getElementById('restart');
     const searchInput = document.querySelector('.search-input');
+    const prevBtn = document.getElementById('prev_btn');
+    const nextBtn = document.getElementById('next_btn');
 
     let wordsAndMeanings;
     let currentWordIndex = 0;
@@ -21,6 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error loading words and meanings:', error));
 
+nextBtn.addEventListener('click', nextButton);
+function nextButton() {
+    currentWordIndex++;
+    if (currentWordIndex < wordsAndMeanings.length) {
+        displayWordAndMeaning(currentWordIndex);
+        pauseAutoplay();
+        if (autoplayActive) {
+            startOrResumeAutoplay(); // Resume autoplay if it was active before
+        }
+    }
+}
+
+prevBtn.addEventListener('click', previousButton);
+
+function previousButton(){
+    currentWordIndex--;
+    if(currentWordIndex >=0){
+        displayWordAndMeaning(currentWordIndex);
+        pauseAutoplay();
+        if (autoplayActive) {
+            startOrResumeAutoplay(); // Resume autoplay if it was active before
+        }
+    }
+}
     playBtn.addEventListener('click', () => {
         // Start or resume autoplay when the play button is clicked
         startOrResumeAutoplay();
