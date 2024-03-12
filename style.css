@@ -135,7 +135,8 @@ button, a{
 }
 @media screen and (max-width: 400px) {
     .btns {
-        width: 90px; /* Reduce font size for smaller screens */
+        width: 70px; /* Reduce font size for smaller screens */
+        font-size: 10px;
     }
 }
 .btns:hover{
