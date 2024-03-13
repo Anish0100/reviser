@@ -140,7 +140,7 @@ button, a{
     }
 }
 .btns:hover{
-    letter-spacing: 0.25em;
+    letter-spacing: 0.1em;
     color: var(--clr);
     background-color: var(--clr);
     box-shadow: 0 0 35px var(--clr);
