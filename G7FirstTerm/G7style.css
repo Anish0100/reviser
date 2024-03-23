@@ -4,6 +4,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     height: 50vh;
+    
 }
 .box-container {
     bottom: 660px;
@@ -14,6 +15,13 @@ body {
     height: 150px;
     background-color: aliceblue;
 }
+
+@media screen and (min-width: 400px) and (max-width: 700px) {
+    .box-container {
+        margin-top: 5px;
+    }
+}
+
 #title {
     bottom: 700px;
     display: flex;
@@ -22,6 +30,13 @@ body {
     flex-direction: column;
     position: relative;
     z-index: -1;
+}
+
+@media screen and (min-width: 400px) and (max-width: 800px) {
+   #title{
+    margin-top: 100px;
+    font-size: 10px;
+   }
 }
 
 h1 {
@@ -139,8 +154,9 @@ button, a{
 }
 @media screen and (max-width: 400px) {
     .btns {
-        width: 70px; /* Reduce font size for smaller screens */
+        width: 70px; 
         font-size: 10px;
+        margin-top: 10px;
     }
 }
 .btns:hover{
@@ -213,6 +229,11 @@ button, a{
     bottom: 740px;
    
 }
+@media screen and (max-width: 400px) {
+    .nav_btn{
+    margin-top: 10px;
+   }
+}
 #next_btn, #prev_btn{
     font-size: 2rem;
     cursor: pointer;
@@ -249,10 +270,5 @@ button, a{
     }
 }
 
-@media screen and (max-width: 500px) {
-    #next_btn:focus, #prev_btn:focus{
-        outline: none !important;
-        background-color: transparent;
-    }
-}
+
 

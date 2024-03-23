@@ -15,6 +15,13 @@ body {
     height: 150px;
     background-color: aliceblue;
 }
+
+@media screen and (max-width: 400px) {
+    .box-container{
+     margin-top: -70px;
+    }
+ }
+
 #title {
     bottom: 700px;
     display: flex;
@@ -23,6 +30,12 @@ body {
     flex-direction: column;
     position: relative;
     z-index: -1;
+}
+
+@media screen and (max-width: 400px) {
+   #title{
+    margin-top: 70px;
+   }
 }
 
 h1 {
@@ -140,8 +153,9 @@ button, a{
 }
 @media screen and (max-width: 400px) {
     .btns {
-        width: 70px; /* Reduce font size for smaller screens */
+        width: 70px; 
         font-size: 10px;
+        margin-top: 10px;
     }
 }
 .btns:hover{
@@ -214,6 +228,11 @@ button, a{
     bottom: 740px;
    
 }
+@media screen and (max-width: 400px) {
+    .nav_btn{
+    margin-top: 10px;
+   }
+}
 #next_btn, #prev_btn{
     font-size: 2rem;
     cursor: pointer;
@@ -250,10 +269,5 @@ button, a{
     }
 }
 
-@media screen and (max-width: 500px) {
-    #next_btn:focus, #prev_btn:focus{
-        outline: none !important;
-        background-color: transparent;
-    }
-}
+
 
