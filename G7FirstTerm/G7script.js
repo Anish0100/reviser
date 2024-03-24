@@ -18,10 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             wordsAndMeanings = data;
-            // Display the first word on page load
+
             displayWordAndMeaning(currentWordIndex);
-        })
-        .catch(error => console.error('Error loading words and meanings:', error));
+          
+        }).catch(error => console.error('Error loading words and meanings:', error));
 
 nextBtn.addEventListener('click', nextButton);
 function nextButton() {

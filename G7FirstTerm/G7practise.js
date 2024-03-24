@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
-    const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
     const pauseBtn = document.getElementById('pause');
-    // const restartBtn = document.getElementById('restart');
+    const restartBtn = document.getElementById('restart');
     const searchInput = document.querySelector('.search-input');
     const prevBtn = document.getElementById('prev_btn');
     const nextBtn = document.getElementById('next_btn');
@@ -14,23 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let speechSynthesisInstance = null; // Variable to hold the speech synthesis instance
 
     // Load words and meanings from JSON file
-    fetch('reviser.json')
+    fetch('G7reviser.json')
         .then(response => response.json())
         .then(data => {
             wordsAndMeanings = data;
-            shuffleDisplay(wordsAndMeanings);
-            displayWordAndMeaning(0);
+            // Display the first word on page load
+            displayWordAndMeaning(currentWordIndex);
         })
         .catch(error => console.error('Error loading words and meanings:', error));
 
-        function shuffleDisplay(array){
-            for(let i = array.length-1; i >= 0; i--){
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]]
-            }
 
-            return array;
-        }
 nextBtn.addEventListener('click', nextButton);
 function nextButton() {
     currentWordIndex++;
@@ -55,6 +47,7 @@ function previousButton(){
         }
     }
 }
+
     playBtn.addEventListener('click', () => {
         // Start or resume autoplay when the play button is clicked
         startOrResumeAutoplay();
@@ -107,24 +100,26 @@ function previousButton(){
         speakCurrentWord();
     }
 
-    // Function to speak the current word
+// Function to speak the current word
 function speakCurrentWord() {
     const wordData = wordsAndMeanings[currentWordIndex];
     if (!wordData) {
         // If wordData is undefined, return
         return;
     }
-    const { word, meaning } = wordData;
-    const speech = new SpeechSynthesisUtterance(`${word}. ${meaning}`);
+    const { word } = wordData;
+    const speech = new SpeechSynthesisUtterance(`${word}`);
     speechSynthesisInstance = speech;
 
     // Event listener to detect when speech synthesis ends
     speech.onend = () => {
-        // If autoplay is active, continue to the next word
+        // If autoplay is active, continue to the next word after 5 seconds
         if (autoplayActive && currentWordIndex < wordsAndMeanings.length - 1) {
-            currentWordIndex++;
-            displayWordAndMeaning(currentWordIndex);
-            speakCurrentWord(); // Speak the next word
+            setTimeout(() => {
+                currentWordIndex++;
+                displayWordAndMeaning(currentWordIndex);
+                speakCurrentWord(); // Speak the next word
+            }, 800); 
         } else if (!autoplayActive) {
             // If autoplay is not active, reset the speech synthesis instance
             speechSynthesisInstance = null;
@@ -135,14 +130,13 @@ function speakCurrentWord() {
 }
 
 
-
    // Function to display the word and meaning
    function displayWordAndMeaning(index) {
     const wordData = wordsAndMeanings[index];
     if (wordData) {
         const { word, meaning } = wordData;
         wordDisplay.innerText = word;
-        meaningDisplay.innerText = meaning;
+        // meaningDisplay.innerText = meaning;
     }
 }
 
