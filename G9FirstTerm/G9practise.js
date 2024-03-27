@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let speechSynthesisInstance = null; // Variable to hold the speech synthesis instance
 
     // Load words and meanings from JSON file
-    fetch('G7reviser.json')
+    fetch('G9reviser.json')
         .then(response => response.json())
         .then(data => {
             wordsAndMeanings = data;
