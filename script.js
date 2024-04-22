@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
     const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
+    const pronounceBtn = document.getElementById('pronounce');
     const pauseBtn = document.getElementById('pause');
     const searchInput = document.querySelector('.search-input');
     const prevBtn = document.getElementById('prev_btn');
@@ -64,10 +65,36 @@ document.addEventListener('DOMContentLoaded', () => {
         pauseAutoplay();
     });
 
+    pronounceBtn.addEventListener('click', ()=>{
+        speakCurrentWordOnly();
+    });
+
+    function speakCurrentWordOnly() {
+        const wordData = wordsAndMeanings[shuffledIndices[currentWordIndex]];
+        if (!wordData) {
+            return;
+        }
+        const { word } = wordData;
+        const speech = new SpeechSynthesisUtterance(word); // Only pronounce the word
+        speechSynthesisInstance = speech;
+        speech.onend = () => {
+            if (autoplayActive && currentWordIndex < wordsAndMeanings.length - 1) {
+                setTimeout(() => {
+                    currentWordIndex++;
+                    displayWordAndMeaning(shuffledIndices[currentWordIndex]);
+                    speakCurrentWord();
+                }, 800);
+            } else if (!autoplayActive) {
+                speechSynthesisInstance = null;
+            }
+        };
+        window.speechSynthesis.speak(speech);
+    }
     function startOrResumeAutoplay() {
         autoplayActive = true;
         playBtn.disabled = true;
         playBtn.style.backgroundColor = 'lightgray';
+        pronounceBtn.disabled = true;
         if (!speechSynthesisInstance) {
             speakCurrentWord();
         } else {
@@ -79,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplayActive = false;
         playBtn.disabled = false;
         playBtn.style.backgroundColor = '#007bff';
+        pronounceBtn.disabled = false;
         if (speechSynthesisInstance) {
             window.speechSynthesis.cancel();
         }

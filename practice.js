@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
     const restartBtn = document.getElementById('restart');
     const playBtn = document.getElementById('autoplay');
+    const PronounceBtn = document.getElementById('pronounce');
     const pauseBtn = document.getElementById('pause');
     const searchInput = document.querySelector('.search-input');
     const prevBtn = document.getElementById('prev_btn');
@@ -69,10 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.reload();
     });
 
+    PronounceBtn.addEventListener('click', () =>{
+        speakCurrentWord();
+    });
+
     function startOrResumeAutoplay() {
         autoplayActive = true;
         playBtn.disabled = true;
         playBtn.style.backgroundColor = 'lightgray';
+        PronounceBtn.disabled = true;
         if (!speechSynthesisInstance) {
             speakCurrentWord();
         } else {
@@ -84,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         autoplayActive = false;
         playBtn.disabled = false;
         playBtn.style.backgroundColor = '#007bff';
+        PronounceBtn.disabled = false;
         if (speechSynthesisInstance) {
             window.speechSynthesis.cancel();
         }
