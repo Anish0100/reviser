@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
+    const restartBtn = document.getElementById('restart');
     const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
     const pauseBtn = document.getElementById('pause');
@@ -64,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         pauseAutoplay();
     });
 
+    restartBtn.addEventListener('click', () => {
+        // Reload the page when the restart button is clicked
+        window.location.reload();
+    });
+    
     function startOrResumeAutoplay() {
         autoplayActive = true;
         playBtn.disabled = true;

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
+    // const restartBtn = document.getElementById('restart'):
     const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
     const pronounceBtn = document.getElementById('pronounce');
@@ -68,6 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
     pronounceBtn.addEventListener('click', ()=>{
         speakCurrentWordOnly();
     });
+
+    // restartBtn.addEventListener('click', () => {
+    //     // Reload the page when the restart button is clicked
+    //     window.location.reload();
+    // })
 
     function speakCurrentWordOnly() {
         const wordData = wordsAndMeanings[shuffledIndices[currentWordIndex]];
@@ -165,3 +171,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+

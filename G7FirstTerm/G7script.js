@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const wordDisplay = document.getElementById('word-display');
+    const  restartBtn = document.getElementById('restart')
     const meaningDisplay = document.getElementById('meaning-display');
     const playBtn = document.getElementById('autoplay');
     const pronounceBtn = document.getElementById('pronounce');
@@ -64,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     pauseBtn.addEventListener('click', () => {
         pauseAutoplay();
     });
+
+    restartBtn.addEventListener('click', () => {
+        // Reload the page when the restart button is clicked
+        window.location.reload();
+    })
 
     pronounceBtn.addEventListener('click', ()=>{
         speakCurrentWordOnly();
@@ -165,3 +171,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+

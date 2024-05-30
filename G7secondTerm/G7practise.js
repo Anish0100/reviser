@@ -57,7 +57,7 @@ function previousButton(){
         // Pause autoplay when the pause button is clicked
         pauseAutoplay();
     });
-
+    
     restartBtn.addEventListener('click', () => {
         // Reload the page when the restart button is clicked
         window.location.reload();
